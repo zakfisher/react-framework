@@ -8,9 +8,10 @@ import routes from './routes';
 
 // Redux store
 import store from './store';
-import roadmapHydrate from './fixtures/roadmap/hydrate';
+import hydrate from './fixtures/hydrate';
 
-roadmapHydrate();
+// Hydrate Redux
+hydrate();
 
 /**
   Client-side entry point

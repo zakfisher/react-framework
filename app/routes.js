@@ -3,17 +3,17 @@ import { Route, IndexRoute } from 'react-router';
 
 // Components
 import Landing from './components/Landing.jsx';
-import AboutBook from './components/AboutBook';
+import VisibleTodoList from './containers/VisibleTodoList.jsx';
 import MissingRoute from './components/MissingRoute';
 
 // import rsdb from './fixtures/rsdb.js';
 
 // Route Config
 export default (
-  <Route path="/" component={Landing}>
-    <IndexRoute component={AboutBook} />
-    <Route path="/test" component={AboutBook} />
+  <Route path="/(:filter)" component={Landing}>
+    <IndexRoute component={VisibleTodoList} />
     {/*
+    <Route path="/test" component={AboutBook} />
     <Route path="/book" component={AboutBook} />
     <Route path="/charts" component={AboutCharts} />
     <Route path="/embeds" component={AboutEmbeds} />

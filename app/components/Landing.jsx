@@ -1,17 +1,27 @@
 import React from 'react';
-import Nav from './Nav';
-import Footer from './Footer';
-import Ribbon from './Ribbon';
+import { Link } from 'react-router';
+import actions from '../actions';
 
 const Landing = (props) => (
   <section className="landing">
-    <Nav />
-    <Ribbon />
+    <h1>Todo App</h1>
+    <ul>
+      <li>
+        <Link to={`/${actions.Filters.ALL.toLowerCase()}`}>All</Link>
+      </li>
+      <li>
+        <Link to={`/${actions.Filters.COMPLETE.toLowerCase()}`}>Complete</Link>
+      </li>
+      <li>
+        <Link to={`/${actions.Filters.INCOMPLETE.toLowerCase()}`}>Incomplete</Link>
+      </li>
+    </ul>
     {props.children}
-    <Footer />
   </section>
 );
+
 Landing.propTypes = {
   children: React.PropTypes.node
 };
+
 export default Landing;
